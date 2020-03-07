@@ -13,6 +13,8 @@ const addTextWatermarkToImage = async function(inputFile, outputFile, text) {
 
   image.print(font, 0, 0, textData, image.getWidth(), image.getHeight());
   await image.quality(100).writeAsync(outputFile);
+  console.log('Watermark was added successfully!');
+  startApp();
 };
 
 //addTextWatermarkToImage('./test.jpg', './test-with-watermark.jpg', 'Hello world')
@@ -28,6 +30,8 @@ const addImageWatermarkToImage = async function(inputFile, outputFile, watermark
     opacitySource: 0.3,
   });
   await image.quality(100).writeAsync(outputFile);
+  console.log('Watermark was added successfully!');
+  startApp();
 };
   
   //addImageWatermarkToImage('./test.jpg', './test-with-watermark2.jpg', './logo.png');
